@@ -1,0 +1,108 @@
+<div id="information">
+  <div id="profile">
+    <!--Interpolation -->
+    <p id="name">
+      {{ appName }}<br /><span id="email">alpineda@student.hau.edu.ph</span>
+    </p>
+    <!--Class Binding-->
+    <p id="college" [class.blue]="notappliedCSSClass">
+      Web Development Student<br /><span id="school"
+        >Holy Angel University</span
+      >
+    </p>
+
+    <hr width="100%" />
+
+    <div id="about">
+      <!--Class Binding-->
+      <p style="display:inline;" [class]="appliedCSSClass">Basic Information</p>
+    </div>
+    <!-- Style Binding -->
+    <p id="basic-information" [style.color]>Age<br /><strong>20</strong></p>
+    <p id="basic-information" [style.color]="myColor">
+      Birthday<br /><strong>May 14, 2002</strong>
+    </p>
+    <p id="basic-information" [style.color]="myColor">
+      Civil Status<br /><strong>Single</strong>
+    </p>
+    <p id="basic-information" [style.color]="myColor">
+      Religion<br /><strong>Catholic</strong>
+    </p>
+
+    <!-- ngFor Directive -->
+    <p id="basic-information" [style.color]="myColor">
+      Languages spoken<br /><strong *ngFor="let item of items">{{
+        item
+      }}</strong>
+    </p>
+
+    <p id="basic-information" [style.color]="myColor">
+      Phone<br /><strong> 0955 750 5166</strong>
+    </p>
+
+    <!-- ngIf Directive -->
+    <ng-template [ngIf]="showElement">
+      <p>This element is displayed if showElement is true</p>
+    </ng-template>
+
+    <hr width="100%" />
+
+    <div id="contact">
+      <!-- ngStyle Directive -->
+      <p style="display:inline;" [ngStyle]="{ color: color }">Contact Me</p>
+    </div>
+    <br />
+    <!-- Property Binding -->
+    <input type="text" [value]="contact" /> <br />
+    <!-- Two-way data binding -->
+    <!-- ngModel Directive -->
+    <input [(ngModel)]="name" placeholder="Name" /> <br />
+    <input [(ngModel)]="email" placeholder="Email" /> <br />
+    <textarea
+      [(ngModel)]="message"
+      class="form-control"
+      name="message"
+      placeholder="Your Message"
+      required="required"
+    ></textarea>
+
+    <!-- Event Binding -->
+    <br /><br />
+    <button (click)="showData($event)">Send</button>
+
+    <!-- ngModel Directive -->
+    <p>Thank you {{ name }}!</p>
+
+    <!-- ngClass Directive 
+
+    <p [ngClass]="{ bold: isBold, italic: isItalic }">
+      This text is dynamically styled
+    </p>
+
+    ngIfElse Directive 
+    <div *ngIf="isValid; else isNot"><strong>Hi!</strong></div>
+    <ng-template #isNot><strong>Thank you!</strong></ng-template>
+  --></div>
+
+  <div id="info-cards">
+    <div class="card">
+      <p class="tags">&nbsp;&nbsp;&nbsp;About Me</p>
+      <ul>
+        <li>
+          <p class="tags">
+            I'm Antonella Pineda<br /><span
+              >A Web developer student at Holy Angel University. Throughout my
+              college years, I've developed skills in HTML, CSS, Java, and
+              Python. I'm seeking more experience in designing and developing
+              web applications. I am looking for different roles in the web and
+              mobile industry to enhance my skills and provide my services to
+              add value to the products of the organization. I am a highly
+              motivated self-learner with a passion for learning and keeping
+              informed of the latest in technology.</span
+            >
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
